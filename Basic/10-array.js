@@ -72,7 +72,7 @@ console.log(myArray) // imprime [ <1 empty item>, 'mouredev', 'Brais' ]
 // METODOS COMUNES
 myArray = []
 
-// push y pop
+// push y pop (agregar y eliminar al final del array)
 myArray.push("Brais")
 myArray.push("Moure")
 myArray.push("mouredev")
@@ -85,7 +85,7 @@ myArray.pop() // elimina el ultimo elemento del array
 
 console.log(myArray) // imprime [ 'Brais', 'Moure' ]
 
-// shift y unshift
+// shift y unshift (sirve para agregar y eliminar al inicio del array)
 console.log(myArray.shift()) // elimina el primer elemento del array
 console.log(myArray) // imprime [ 'Moure' ]
 
@@ -104,7 +104,7 @@ myArray = [] // forma de limpiar un array
 console.log(myArray) // imprime []
 
 
-// slice
+// slice (sirve para crear una copia de una parte del array, sin modificar el array original)
 myArray = ["Brais", "Moure", "mouredev", 37, true]
 
 let myNewArray = myArray.slice(1,3)  // crea un nuevo array desde la posicion 1 hasta la posicion 2 (sin incluir la posicion 3)
@@ -112,8 +112,7 @@ let myNewArray = myArray.slice(1,3)  // crea un nuevo array desde la posicion 1 
 console.log(myArray)
 console.log(myNewArray) // imprime [ 'Moure' ]
 
-// splice
-
+// splice (sirve para eliminar o reemplazar elementos en un array, modifica el array original)
 myArray.splice(1,3) // elimina 3 elementos desde la posicion 1 y los elimina del array original
 console.log(myArray) // imprime [ 'Brais', true ]
 
