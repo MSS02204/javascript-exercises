@@ -123,3 +123,66 @@ console.log(person6.name) // Imprime "Brais", accedemos a la propiedad privada a
 
 person6.bank = "new IBAN123456789" // Usamos el setter para modificar la propiedad privada bank
 //console.log(person6.bank) // Imprime "new IBAN123456789", accedemos a la propiedad privada a través del getter
+
+
+
+
+// HERENCIA (sirve para heredar las propiedasdes y el comportamiento(funcionamiento) de una clase)
+
+class Animal {
+    constructor(name) {
+        this.name = name
+    }
+
+    sound() {
+        console.log("Emite un sonido genérico")
+    }
+}
+
+class Dog extends Animal{
+
+    sound() { //sobreescribimos el metodo sound de la clase padre (Animal)
+        console.log("Guau!")
+    }
+
+    run() {
+        console.log("El perro corre")
+    }
+}
+
+//aqui Dog() esta heredando el constructor de su superclase (Animal), de su padre
+let myDog = new Dog("MoureDog") //dog debe recibir un nombre porque la clase Animal lo pide, y Dog hereda de Animal. Dog no tiene constructor, entonces usa el de Animal
+myDog.run() // Imprime "El perro corre"
+myDog.sound() // Imprime "Guau!"
+
+
+class Fish extends Animal{
+
+    constructor(name, size) {
+        super(name) //llamamos al constructor de la clase padre (Animal) para inicializar el name, ya que si no lo hacemos, name no se inicializa(eso lo hace el super)
+        this.size = size
+    }
+    swim() {
+        console.log("El pez nada")
+    }
+}
+
+let myFish = new Fish("MoureFish",10) //Fish debe recibir un nombre porque la clase Animal lo pide, y Fish hereda de Animal. Fish tiene su propio constructor(name y size), entonces debe llamar al de Animal con super() 
+myFish.swim() // Imprime "El pez nada"
+myFish.sound() // Imprime "Emite un sonido genérico"
+console.log(myFish) // Imprime Fish { name: 'MoureFish', size: 10 }
+
+
+
+// Métodos estáticos (static) - pertenecen a la clase, no a las instancias
+class MathOperations { //la instancia de MathOperations es una instancia unica, no tiene propiedades, solo tiene el metodo static
+    static sum(a,b) {
+        return a + b
+    }
+}
+
+// Esto es instanciar una clase (la clase MathOperations)
+// let myClass = new MathOperations()
+// console.log(myClass.sum(5,10)) // Error, no se puede acceder al metodo static desde la instancia
+// La forma correcta de usar un metodo static es:
+console.log(MathOperations.sum(5,10)) // Imprime 15, accedemos al metodo static desde la clase directamente
