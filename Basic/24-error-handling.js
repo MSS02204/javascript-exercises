@@ -72,7 +72,6 @@ console.log(sum(5,10)) // 15
 console.log(typeof 5) // number
 console.log("\n")
 
-
 // Errores del sistema (Error, TypeError, ReferenceError, RangeError, SyntaxError, etc.)
 function sumIntegers(a,b) {
     if (typeof a !== "number" || typeof b !== "number") {
