@@ -77,6 +77,13 @@ let obj2 = {year: 2020, color: "red" }
 
 let unionObj = Object.assign(obj1, obj2)
 console.log(unionObj) // Imprime { brand: 'Toyota', model: 'Corolla', year: 2020, color: 'red' }
+
+// Otra forma
+const persona = { nombre: "Juan", edad: 25}
+const direccion = { ciudad: "Lima", pais: "Perú"}
+
+Object.assign(persona, direccion)
+console.log(persona) // Imprime { nombre: 'Juan', edad: 25, ciudad: 'Lima', pais: 'Perú' }
 console.log("\n")
 
 
@@ -92,6 +99,29 @@ class Exam {
         throw new Error("Este método debe ser implementado por la subclase")
     }
 }
+
+// Otro ejemplo
+class Animal {
+    constructor() {
+        if (new.target === Animal) {
+            throw new Error("No se puede instanciar la clase abstracta Animal")
+        }
+    }
+
+    hacerSonido() {
+        throw new Error("Método 'hacerSonido()' debe ser implementado")
+    }
+}
+
+class Perro extends Animal {
+    hacerSonido() {
+        console.log("Guau Guau")
+    }
+}
+const miPerro = new Perro()
+miPerro.hacerSonido() // Imprime Guau Guau
+// const animal = new Animal() // Error: No se puede instanciar la clase abstracta Animal
+console.log("\n")
 
 // Esto provoca error
 // let newExam = new Exam("Math") // Imprime Error
@@ -140,6 +170,33 @@ newEnglishExam.points() // Imprime Obtiene puntos extras para la evaluación fin
 const newLanguageExam = new LanguageExam("Language")
 console.log(newLanguageExam)
 newLanguageExam.points() // Imprime Obtiene puntos extras para la evaluación final por aprobar el examen de Language
+console.log("\n")
+
+
+// Otra forma
+const volador = {
+    volar() {
+        console.log(`${this.nombre} está volando`)
+    }
+}
+
+const nadador = {
+    nadar() {
+        console.log(`${this.nombre} está nadando`)
+    }
+}
+
+class Pato {
+    constructor(nombre) {
+        this.nombre = nombre
+    }
+}
+
+Object.assign(Pato.prototype, volador, nadador)
+
+const pato = new Pato("Donald")
+pato.volar() // Imprime Donald está volando
+pato.nadar() // Imprime Donald está nadando
 console.log("\n")
 
 
