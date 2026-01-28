@@ -215,5 +215,6 @@ console.log(account.balance) // Imprime get y undefined, intercepta la operació
 account.balance = 50 // Imprime set, intercepta la operación set
 console.log(account.balance)
 
-account.balance = -10 // Imprime set y lanza un error(saldo no puede ser negativo), intercepta la operación set
+// Da error
+// account.balance = -10 // Imprime set y lanza un error(saldo no puede ser negativo), intercepta la operación set
 

@@ -3,7 +3,7 @@
 // Prototipos y Herencia 
 
 // Prototipos (a dia de hoy no es tan habitual, pero antes estuvo muy presente en JS)
-// un mecanismo con el cual los objetos pueden heredar prpoiedades y funciones de otros objetos
+// un mecanismo con el cual los objetos pueden heredar propiedades y funciones de otros objetos
 // cualquier objeto que se crea en JS tiene un prototipo asociado
 // propiedad Prototype que nos permite acceder a esas propiedades y metodos entre los diferentes objetos
 let person = {
